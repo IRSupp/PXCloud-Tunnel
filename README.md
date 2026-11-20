@@ -86,8 +86,8 @@ Ubuntu 24.04 · x86_64 · English management menu
 
 ### وضعیت انتشار
 
-**نسخهٔ جاری در مرحلهٔ آماده‌سازی: 1.6.0-rc.2 — نامزد انتشار.**  
-بستهٔ نهایی در حال اعتبارسنجی است و هنوز انتشار Stable اعلام نشده است. فقط فایل‌هایی را دریافت کنید که همراه یادداشت انتشار و checksum در بخش Releases قرار گرفته‌اند.
+**نسخهٔ آزمایشی منتشرشده: [1.6.0-rc.2](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0-rc.2).**  
+بستهٔ کامپایل‌شده، نصب‌کننده و checksum آمادهٔ دریافت‌اند. آزمون‌های تکمیلی برای انتشار Stable ادامه دارند. فقط فایل‌هایی را دریافت کنید که همراه یادداشت انتشار و checksum در بخش Releases قرار گرفته‌اند.
 
 **خرید و مدیریت اشتراک:** [@irsupplm_bot](https://t.me/irsupplm_bot)  
 **اخبار و نسخه‌های جدید:** [@irsuppchannel](https://t.me/irsuppchannel)
@@ -136,8 +136,8 @@ Multiple connection options, including **Rakhsh**, share the same management, mo
 
 ### Release status
 
-**Currently being prepared: 1.6.0-rc.2 — release candidate.**  
-The final package is undergoing validation; a Stable release has not been announced. Use only assets accompanied by release notes and checksums in Releases.
+**Available preview: [1.6.0-rc.2](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0-rc.2).**  
+The compiled package, installer and checksums are available. Further validation for Stable is in progress. Use only assets accompanied by release notes and checksums in Releases.
 
 ---
 
