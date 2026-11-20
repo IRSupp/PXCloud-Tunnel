@@ -1,14 +1,26 @@
+<div align="center">
+
 # PXCloud Tunnel
 
-### 🇮🇷 فارسی | 🇬🇧 English
+### Your servers. One control center.
 
-## 🛒 [خرید و مدیریت لایسنس | Buy & Manage Your License](https://t.me/irsupplm_bot)
+**اتصال بین سرورها، با مدیریت یکپارچه**
 
-**ربات رسمی / Official bot: [@irsupplm_bot](https://t.me/irsupplm_bot)**
+راه‌اندازی · پایش کیفیت · مسیریابی انتخابی · جابه‌جایی خودکار
 
-## 📣 [کانال رسمی تلگرام | Official Telegram Channel](https://t.me/irsuppchannel)
+<p>
+<a href="https://t.me/irsupplm_bot"><img alt="Buy a license" src="https://img.shields.io/badge/BUY_A_LICENSE-irsupplm__bot-F4B942?style=for-the-badge&logo=telegram&logoColor=white"></a>
+<a href="https://github.com/IRSupp/PXCloud-Tunnel/releases"><img alt="Downloads" src="https://img.shields.io/badge/DOWNLOADS-Releases-2563EB?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://t.me/irsuppchannel"><img alt="Official channel" src="https://img.shields.io/badge/NEWS-irsuppchannel-0D9488?style=for-the-badge&logo=telegram&logoColor=white"></a>
+</p>
 
-**اخبار و اطلاعیه‌ها / News & announcements: [@irsuppchannel](https://t.me/irsuppchannel)**
+**[خرید و مدیریت لایسنس](https://t.me/irsupplm_bot) · [کانال رسمی](https://t.me/irsuppchannel)**
+
+Ubuntu 24.04 · x86_64 · English management menu
+
+[فارسی](#فارسی)  /  [English](#english)
+
+</div>
 
 ---
 
@@ -16,46 +28,69 @@
 
 ## فارسی
 
-### اتصال بین سرورها، با مدیریت یکپارچه
+### کنترل مسیر، از یک نقطه
 
-**PXCloud Tunnel** ابزاری برای راه‌اندازی و مدیریت اتصال بین دو سرور است؛ برای نمونه، یک سرور ایران و یک سرور خارج. با تعریف مسیرهای موردنظر، ترافیک انتخاب‌شده از اتصال بین این دو سرور عبور می‌کند. هدف پروژه، ساده‌ترکردن نصب، مدیریت مسیر ترافیک و بررسی کیفیت اتصال در یک محیط منظم است.
+**PXCloud Tunnel** مجموعه‌ای برای اتصال دو سرور و مدیریت ترافیک میان آن‌هاست. مسیرهای موردنیاز را راه‌اندازی کنید، کیفیت اتصال را ببینید و مشخص کنید ترافیک کدام کاربران یا سرویس‌ها از سرور مقابل عبور کند؛ همه از یک منوی مدیریتی.
 
-این مجموعه چند گزینهٔ اتصال، از جمله **Rakhsh**، در اختیار مدیر سرور قرار می‌دهد. جزئیات طراحی و سازوکار داخلی این گزینه‌ها در صفحهٔ محصول منتشر نمی‌شود.
+چند گزینهٔ اتصال، از جمله **Rakhsh**، در یک محیط مشترک مدیریت می‌شوند. نصب، پایش، تست و مدیریت مسیرها به ابزارهای پراکنده نیاز ندارد.
 
-### امکانات
+### امکانات در یک نگاه
 
-- **مدیریت از یک منوی مشترک:** نصب، راه‌اندازی مجدد، حذف و تنظیم گزینه‌های اتصال.
-- **پایش کیفیت:** بررسی تأخیر، اتلاف بسته و وضعیت مسیرهای نصب‌شده.
-- **جابه‌جایی خودکار مسیر (Failover):** انتخاب مسیر جایگزین هنگام قطع اتصال یا افت کیفیت، در صورت وجود مسیر مناسب. Rakhsh نیز در این انتخاب شرکت می‌کند.
-- **تست و مقایسه:** نمایش نتایج پینگ، اتلاف بسته و سرعت ارسال و دریافت در جدول مشترک.
-- **هدایت ترافیک انتخابی:** تعریف رنج IP کاربران و تنظیم مسیر ترافیک سرویس‌های پشتیبانی‌شده.
-- **تنظیمات فایروال و سرویس:** مدیریت اتصال‌ها از طریق سرویس‌های سیستم و ابزارهای مدیریتی پروژه.
-- **لایسنس وابسته به سرور:** فعال‌سازی و بررسی مجوز برای جفت سرور ثبت‌شده.
+| قابلیت | کاربرد |
+| :--- | :--- |
+| **مدیریت یکپارچه** | نصب، توقف، راه‌اندازی مجدد، حذف و تنظیم اتصال‌ها |
+| **پایش کیفیت** | مشاهدهٔ وضعیت مسیرها، تأخیر و اتلاف بسته |
+| **Failover خودکار** | انتخاب مسیر جایگزین هنگام قطع یا افت کیفیت؛ شامل Rakhsh |
+| **تست مقایسه‌ای** | نمایش پینگ، اتلاف بسته و سرعت ارسال و دریافت در یک جدول |
+| **مسیریابی انتخابی** | هدایت رنج کاربران و ترافیک سرویس‌های پشتیبانی‌شده |
+| **مدیریت سرویس و فایروال** | تنظیمات اتصال و سرویس‌های سیستم از یک محیط |
+| **لایسنس وابسته به سرور** | ثبت سرور ایران و جفت‌سازی سرور مقابل |
 
-### جابه‌جایی خودکار چگونه کمک می‌کند؟
+### شروع استفاده
 
-وقتی چند مسیر نصب و مانیتورینگ فعال باشد، سیستم کیفیت آن‌ها را مقایسه می‌کند. قطع مسیر یا افزایش اتلاف بسته می‌تواند باعث انتخاب مسیر جایگزین شود. برای تغییر مسیر صرفاً به‌دلیل کیفیت بهتر، شرایط پایداری نیز بررسی می‌شود تا جابه‌جایی‌های مکرر کمتر شود. این قابلیت تضمین نمی‌کند که تمام نشست‌های فعال بدون وقفه باقی بمانند.
+**۱ — دریافت مجوز**  
+از **[ربات رسمی @irsupplm_bot](https://t.me/irsupplm_bot)** پلن موردنظر را انتخاب و اطلاعات سرور ایران را ثبت کنید. قیمت و شرایط هر پلن در ربات نمایش داده می‌شود.
 
-### لایسنس و شروع استفاده
+**۲ — دریافت بسته**  
+بسته‌های قابل نصب و یادداشت تغییرات در **[Releases](https://github.com/IRSupp/PXCloud-Tunnel/releases)** قرار می‌گیرند. فایل نصب و بستهٔ همان نسخه را کنار هم نگه دارید و مراحل همان انتشار را دنبال کنید. فایل خودکار «Source code» گیت‌هاب، بستهٔ نصب محصول نیست.
 
-1. برای خرید و مدیریت مجوز، وارد **[ربات رسمی خرید لایسنس](https://t.me/irsupplm_bot)** شوید.
-2. اطلاعات سرور ایران را برای ثبت مجوز ارائه کنید؛ سرور مقابل از طریق فرایند جفت‌سازی به مجوز مرتبط می‌شود.
-3. پس از انتشار نسخهٔ قابل نصب، بسته را فقط از بخش **[Releases](https://github.com/IRSupp/PXCloud-Tunnel/releases)** و اطلاعیه‌های رسمی دریافت کنید.
-4. اتصال‌های موردنیاز، رنج ترافیک و تنظیمات پایش را متناسب با شبکهٔ خود تنظیم کنید.
+**۳ — تنظیم اتصال**  
+مجوز را فعال کنید، سرور مقابل را جفت کنید و اتصال‌ها، مسیر ترافیک و پایش کیفیت را تنظیم کنید. دستور بازکردن منوی مدیریت پس از نصب: **`pxcloud`**.
 
-بررسی دوره‌ای آنلاین مجوز هر **۶ ساعت** انجام می‌شود. برای انقضای اشتراک، مهلت **۶ساعته** در نظر گرفته شده است؛ ادامهٔ کار همچنین به معتبرماندن تأییدیهٔ آنلاین وابسته است. قیمت و پلن‌های قابل خرید را در ربات بررسی کنید.
+### پیش‌نیازها
 
-### پیش‌نیاز و وضعیت نسخه
+| مورد | نیاز فعلی |
+| :--- | :--- |
+| سیستم‌عامل هر دو سرور | Ubuntu 24.04 |
+| معماری | x86_64 / amd64 |
+| دسترسی | root یا دسترسی مدیریتی معادل |
+| شبکه | ارتباط قابل‌استفاده بین دو سرور |
+| زبان منو | انگلیسی |
 
-- محیط هدف فعلی: **Ubuntu 24.04، معماری x86_64**، روی هر دو سرور.
-- دسترسی مدیریتی و ارتباط شبکهٔ قابل‌استفاده بین دو سرور لازم است.
-- منوی مدیریت فعلی **انگلیسی** است.
-- نسخهٔ پایه: **1.6.0-rc.1 — نامزد انتشار**. بستهٔ نهایی کامپایل‌شده هنوز در این مخزن منتشر نشده است. عنوان Stable پس از تکمیل اعتبارسنجی بستهٔ نهایی تعیین می‌شود.
-- سقف ارسال پیش‌فرض Rakhsh برای تنظیمات جدید **۱۰۰ مگابیت‌برثانیه** است؛ این عدد تضمین سرعت واقعی نیست و تنظیمات قبلی را تغییر نمی‌دهد.
+<details>
+<summary><strong>پرسش‌های متداول</strong></summary>
 
-سرعت، تأخیر و پایداری به مسیر شبکه، ظرفیت سرورها، محدودیت‌های دیتاسنتر و نوع ترافیک وابسته‌اند. پروژه تضمین سرعت ثابت، پینگ مشخص یا اتصال بدون قطعی ارائه نمی‌کند.
+**آیا Rakhsh در Failover شرکت می‌کند؟**  
+بله. با نصب چند مسیر و فعال‌کردن پایش، Rakhsh نیز در ارزیابی کیفیت و انتخاب مسیر شرکت می‌کند. تنظیمات پایداری، جابه‌جایی مکرر بین مسیرها را محدود می‌کنند. حفظ تمام نشست‌های فعال هنگام تغییر مسیر تضمین نمی‌شود.
 
-**کد اختصاصی پروژه منتشر نمی‌شود.** این مخزن برای معرفی محصول، اطلاعیه‌ها و خروجی‌های تأییدشدهٔ انتشار است. اعلان‌ها و الزامات مجوز وابستگی‌های ثالث حفظ می‌شوند.
+**آیا سرعت مشخصی تضمین شده است؟**  
+خیر. کیفیت مسیر اینترنت، ظرفیت سرورها و شرایط شبکه تعیین‌کننده‌اند. مقدار پیش‌فرض ۱۰۰ مگابیت‌برثانیه برای تنظیم جدید Rakhsh یک سقف تنظیمی است، نه تضمین سرعت.
+
+**لایسنس چه زمانی بررسی می‌شود؟**  
+بررسی آنلاین دوره‌ای هر ۶ ساعت انجام می‌شود. اشتراک پس از انقضا ۶ ساعت مهلت دارد؛ ادامهٔ کار به معتبرماندن تأییدیهٔ مجوز نیز وابسته است.
+
+**آیا این مخزن شامل سورس اختصاصی محصول است؟**  
+خیر. این مخزن برای معرفی و توزیع محصول است. کد اختصاصی در بستهٔ مشتری به‌صورت کامپایل‌شده ارائه می‌شود. اعلان‌ها و فایل‌های الزامی اجزای ثالث همراه بسته حفظ می‌شوند.
+
+</details>
+
+### وضعیت انتشار
+
+**نسخهٔ جاری در مرحلهٔ آماده‌سازی: 1.6.0-rc.2 — نامزد انتشار.**  
+بستهٔ نهایی در حال اعتبارسنجی است و هنوز انتشار Stable اعلام نشده است. فقط فایل‌هایی را دریافت کنید که همراه یادداشت انتشار و checksum در بخش Releases قرار گرفته‌اند.
+
+**خرید و مدیریت اشتراک:** [@irsupplm_bot](https://t.me/irsupplm_bot)  
+**اخبار و نسخه‌های جدید:** [@irsuppchannel](https://t.me/irsuppchannel)
 
 </div>
 
@@ -63,47 +98,53 @@
 
 ## English
 
-### Server-to-server connectivity, managed in one place
+### One place to manage your server connections
 
-**PXCloud Tunnel** helps administrators deploy and manage connectivity between two servers—for example, one in Iran and one abroad. Selected traffic can be routed through this connection according to the configured rules. The project brings installation, traffic routing and connection-quality checks into a single management environment.
+**PXCloud Tunnel** connects two servers and gives you a shared control center for deployment, traffic routing and connection quality. Choose which users or supported services use the remote server, compare available paths and manage their lifecycle from one menu.
 
-The suite offers multiple connection options, including **Rakhsh**. Internal implementation details and transport mechanisms are not disclosed on this product page.
+Multiple connection options, including **Rakhsh**, share the same management, monitoring and testing workflow.
 
-### Features
+### Built for everyday operation
 
-- **Unified management:** install, restart, remove and configure connection options.
-- **Quality monitoring:** track latency, packet loss and the health of installed paths.
-- **Automatic failover:** select an available alternative when the active path fails or deteriorates. Rakhsh participates in path selection.
-- **Tests and comparisons:** view ping, packet loss, upload and download results in a shared table.
-- **Selective traffic routing:** configure client IP ranges and routing for supported services.
-- **Firewall and service management:** manage connections through system services and the project tools.
-- **Server-bound licensing:** activate and validate the registered server pair.
+| Capability | What it provides |
+| :--- | :--- |
+| **Unified management** | Install, stop, restart, remove and configure connections |
+| **Quality monitoring** | Connection status, latency and packet loss |
+| **Automatic failover** | Alternate-path selection on failure or quality degradation, including Rakhsh |
+| **Comparative testing** | Ping, loss, upload and download results in one table |
+| **Selective routing** | Route client subnets and supported service traffic |
+| **Service & firewall controls** | Manage connection settings and system services |
+| **Server-bound licensing** | Register the Iran-side server and pair its remote endpoint |
 
-### Automatic path selection
+### Get started
 
-With multiple paths installed and monitoring enabled, the system compares their quality. A failed path or excessive packet loss can trigger a switch to a suitable alternative. Quality-driven switches also require sustained improvement to reduce unnecessary switching. Failover does not guarantee uninterrupted continuity for every existing session.
+1. **Get a license** through **[@irsupplm_bot](https://t.me/irsupplm_bot)** and register the Iran-side server. Plans and pricing are listed in the bot.
+2. **Get the matching installer and package** from **[Releases](https://github.com/IRSupp/PXCloud-Tunnel/releases)**. Keep them in the same directory and follow the instructions for that version. GitHub’s automatic “Source code” downloads are not product installers.
+3. **Activate and configure** your license, pair the remote endpoint, then set up connections, traffic routing and monitoring. After installation, open the management menu with `pxcloud`.
 
-### Licensing and getting started
+**Requirements:** Ubuntu 24.04 on both servers, x86_64 / amd64, administrative access and a usable network path. The management menu is in English.
 
-1. Visit the **[official licensing bot](https://t.me/irsupplm_bot)** to purchase and manage your license.
-2. Provide the Iran server information for registration; the remote server is associated through the pairing process.
-3. Once an installable build is published, obtain it only from **[Releases](https://github.com/IRSupp/PXCloud-Tunnel/releases)** and official announcements.
-4. Configure your connections, traffic ranges and monitoring settings for your network.
+<details>
+<summary><strong>Operation & licensing</strong></summary>
 
-Online license checks run every **six hours**. Subscription expiration has a **six-hour grace period**; continued operation also requires a valid online lease. Consult the bot for available plans and pricing.
+- Failover requires multiple installed paths and active monitoring. Stability checks reduce repeated switching; uninterrupted survival of every active session is not guaranteed.
+- Throughput depends on the network path and server capacity. The 100 Mbps default for new Rakhsh configurations is a configured cap, not a speed guarantee.
+- Online license checks run every six hours. Subscriptions have a six-hour expiry grace period; a valid license lease is also required.
+- This is a product distribution and documentation repository. Proprietary application code is supplied in compiled form. Required third-party notices and corresponding materials remain included.
 
-### Requirements and release status
+</details>
 
-- Current target: **Ubuntu 24.04, x86_64**, on both servers.
-- Administrative access and usable network connectivity between the servers are required.
-- The management menu is currently **English**.
-- Baseline version: **1.6.0-rc.1 — release candidate**. No final compiled package has been published in this repository yet. Stable status requires validation of the final artifact.
-- New Rakhsh configurations default to a **100 Mbps sending cap**. This is not a throughput guarantee and does not modify existing configurations.
+### Release status
 
-Throughput, latency and stability depend on network routing, server capacity, datacenter restrictions and traffic characteristics. No fixed speed, specific latency or uninterrupted connectivity is guaranteed.
-
-**Proprietary source code is not published.** This repository is reserved for product information, announcements and approved release artifacts. Applicable third-party notices and license obligations are preserved.
+**Currently being prepared: 1.6.0-rc.2 — release candidate.**  
+The final package is undergoing validation; a Stable release has not been announced. Use only assets accompanied by release notes and checksums in Releases.
 
 ---
 
-**🛒 [خرید لایسنس / Buy a license](https://t.me/irsupplm_bot) · 📣 [کانال تلگرام / Telegram channel](https://t.me/irsuppchannel)**
+<div align="center">
+
+**[Buy & manage your license](https://t.me/irsupplm_bot) · [Official announcements](https://t.me/irsuppchannel) · [Downloads](https://github.com/IRSupp/PXCloud-Tunnel/releases)**
+
+**PXCloud Tunnel · IRSupp**
+
+</div>
