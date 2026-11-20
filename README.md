@@ -16,7 +16,7 @@
 
 **[خرید و مدیریت لایسنس](https://t.me/irsupplm_bot) · [کانال رسمی](https://t.me/irsuppchannel)**
 
-Ubuntu 24.04 · x86_64 · English management menu
+**[Stable 1.6.0](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0)** · Ubuntu 24.04 · x86_64 · English menu
 
 [فارسی](#فارسی)  /  [English](#english)
 
@@ -67,6 +67,94 @@ Ubuntu 24.04 · x86_64 · English management menu
 | شبکه | ارتباط قابل‌استفاده بین دو سرور |
 | زبان منو | انگلیسی |
 
+### نصب روی هر دو سرور
+
+در این راهنما **A سرور ایران** و **B سرور خارج** است؛ کشور سرور B محدودیتی ندارد.
+
+از Assets همان نسخه، سه فایل زیر را دریافت و در یک پوشه روی **هر دو سرور** قرار دهید:
+
+- `PXCloud-Tunnel-1.6.0-linux-x86_64.tar.gz`
+- `PXCloud-Tunnel-Install.sh`
+- `SHA256SUMS`
+
+فایل‌های خودکار **Source code** برای نصب نیستند. سپس در همان پوشه اجرا کنید:
+
+</div>
+
+```bash
+sha256sum -c SHA256SUMS
+sudo bash PXCloud-Tunnel-Install.sh
+sudo pxcloud --version
+```
+
+<div dir="rtl">
+
+اگر بررسی checksum موفق نبود، نصب را ادامه ندهید و فایل‌های همان نسخه را دوباره دریافت کنید. موتورهای اتصال همراه بسته هستند؛ نصب بعضی وابستگی‌های سیستم ممکن است به مخازن Ubuntu نیاز داشته باشد.
+
+### راه‌اندازی، قدم‌به‌قدم
+
+**۱. فعال‌سازی در ایران**  
+روی A دستور `sudo pxcloud license` را اجرا کنید. در منوی لایسنس، **Activate Iran license** را بزنید و کلید خریداری‌شده از ربات را وارد کنید. IP ثبت‌شده باید با IP عمومی سرور ایران مطابقت داشته باشد. گزینهٔ **Activate exempt Iran IP** فقط برای IPهایی است که مدیر سامانه قبلاً معاف کرده است.
+
+**۲. جفت‌کردن سرور خارج**  
+در همان منوی A، **Pair foreign server (from Iran)** را انتخاب کنید؛ IP عمومی B و مسیر خروجی `/root/PXCloud-invitation.json` را بدهید. این فایل خصوصی را با SSH/SCP به B انتقال دهید. روی B دستور `sudo pxcloud license` و گزینهٔ **Join pair (on foreign server)** را اجرا و مسیر فایل را وارد کنید. دعوت‌نامه باید ظرف **۱۵ دقیقه** استفاده شود.
+
+**۳. ساخت اتصال‌ها روی ایران**  
+با `sudo pxcloud` منوی اصلی را باز کنید. گزینهٔ **5 — Server setup / Import B bundle** را بزنید، نقش **A** را انتخاب و IP سرور B را وارد کنید. IP ایران به‌صورت خودکار شناسایی می‌شود؛ اگر شناسایی ممکن نبود، برنامه آن را می‌پرسد. سپس از بخش **TUNNELS** اتصال‌های موردنیاز را انتخاب و **Install** کنید. برای Failover حداقل دو مسیر نصب کنید.
+
+**۴. انتقال تنظیمات اتصال به خارج**  
+روی A از گزینهٔ **9 — Export B bundle** خروجی بگیرید؛ برای مثال `/root/PXCloud-B.json`. آن را خصوصی به B انتقال دهید. روی B از گزینهٔ **5**، نقش **B** را انتخاب و مسیر فایل را وارد کنید. اتصال‌های موجود در بسته روی B نصب می‌شوند. **این بسته با دعوت‌نامهٔ لایسنس متفاوت است و کلیدهای اتصال را در خود دارد؛ آن را در کانال، مخزن یا پیام عمومی قرار ندهید.**
+
+**۵. انتخاب ترافیک کاربران**  
+برای سرویس‌هایی که کاربرانشان رنج داخلی دارند، از گزینهٔ **6 — Client ranges & firewall**، رنج واقعی سرویس خود را وارد کنید. همان رنج‌ها باید در هر دو سمت تنظیم شوند. ابتدا روی **B** و سپس روی **A** مسیریابی را فعال کنید. هیچ رنجی از پیش برای کاربران انتخاب نشده است؛ مسیر کاربران باید از قبل روی A وجود داشته باشد. این بخش برای ترافیک IPv4 است.
+
+برای **V2Ray / Xray** از گزینهٔ **15 — V2Ray / Xray Traffic** استفاده کنید و راهنمای همان بخش را دنبال کنید؛ صرف واردکردن رنج کاربران برای این سرویس‌ها کافی نیست.
+
+**۶. بررسی اتصال**  
+گزینهٔ **7 — Quality dashboard** وضعیت و مسیر فعال را نشان می‌دهد. از گزینهٔ **8 — Failover settings** حالت `auto` را انتخاب کنید تا مسیرهای نصب‌شده، از جمله Rakhsh، در انتخاب خودکار شرکت کنند. تنظیمات کیفیت از جابه‌جایی بی‌دلیل و پی‌درپی جلوگیری می‌کنند؛ عبور پینگ از یک عدد ثابت به‌تنهایی همیشه موجب سوئیچ نمی‌شود.
+
+### آزمون و مدیریت روزمره
+
+برای آماده‌کردن ابزار تست سرعت، روی **هر دو سرور** اجرا کنید:
+
+</div>
+
+```bash
+sudo pxcloud test-setup
+```
+
+<div dir="rtl">
+
+سپس روی A تست تمام مسیرهای نصب‌شده را اجرا کنید:
+
+</div>
+
+```bash
+sudo pxcloud test --tunnel all --full --seconds 20 --streams 1
+```
+
+<div dir="rtl">
+
+نتیجهٔ هر مسیر در جدول مقایسه‌ای می‌آید. `--streams 1` یک جریان TCP و `--streams 4` چهار جریان هم‌زمان را می‌سنجد. Upload و Download از دید سروری هستند که تست روی آن اجرا شده است. این سرعت **بین دو سرور** است، نه سرعت اینترنت یا سرور بازی؛ تست سرعت می‌تواند موقتاً روی ترافیک جاری اثر بگذارد.
+
+| کار | مسیر دسترسی |
+| :--- | :--- |
+| بازکردن منو | `sudo pxcloud` |
+| وضعیت یک‌باره | `sudo pxcloud status` |
+| نسخهٔ نصب‌شده | `sudo pxcloud --version` |
+| وضعیت لایسنس | `sudo pxcloud license status` |
+| توقف، شروع، ری‌استارت یا نصب مجدد | انتخاب تونل ← گزینهٔ مربوطه |
+| تست و جدول نتایج | گزینهٔ 11 |
+| رویدادهای تغییر مسیر | گزینهٔ 10 |
+| تنظیم بازیابی پورت wg-custome | گزینهٔ 12 |
+| حذف سرویس‌های محصول | گزینهٔ 13؛ پس از بررسی پیام برنامه |
+
+هر تونل به‌صورت سرویس systemd مدیریت می‌شود. نصب مجدد از منوی تونل، کلیدهای اتصال را نگه می‌دارد. پس از افزودن مسیر یا تغییر تنظیماتی که باید بین دو سمت مشترک باشند، بستهٔ B را دوباره صادر و وارد کنید.
+
+### اگر اتصال برقرار نشد
+
+ابتدا اعتبار لایسنس و جفت‌سازی، سپس تطابق IPها، صحیح‌بودن ساعت سرورها و جدیدبودن بستهٔ B را بررسی کنید. وضعیت مسیرها را در داشبورد و رویدادها را در گزینهٔ 10 ببینید. فایروال سیستم و فایروال دیتاسنتر باید ارتباط انتخاب‌شده را مجاز کنند. کلید لایسنس، دعوت‌نامه و بستهٔ خصوصی را در گزارش عمومی ارسال نکنید.
+
 <details>
 <summary><strong>پرسش‌های متداول</strong></summary>
 
@@ -77,7 +165,7 @@ Ubuntu 24.04 · x86_64 · English management menu
 خیر. کیفیت مسیر اینترنت، ظرفیت سرورها و شرایط شبکه تعیین‌کننده‌اند. مقدار پیش‌فرض ۱۰۰ مگابیت‌برثانیه برای تنظیم جدید Rakhsh یک سقف تنظیمی است، نه تضمین سرعت.
 
 **لایسنس چه زمانی بررسی می‌شود؟**  
-بررسی آنلاین دوره‌ای هر ۶ ساعت انجام می‌شود. اشتراک پس از انقضا ۶ ساعت مهلت دارد؛ ادامهٔ کار به معتبرماندن تأییدیهٔ مجوز نیز وابسته است.
+اعتبارسنجی آنلاین در چرخهٔ ۶ساعته انجام می‌شود؛ درخواست تمدید دو دقیقه پیش از پایان اعتبار آغاز می‌شود تا تأخیر شبکه باعث قطع بی‌دلیل نشود. اشتراک پس از انقضا ۶ ساعت مهلت دارد؛ ادامهٔ کار به معتبرماندن تأییدیهٔ مجوز نیز وابسته است.
 
 **آیا این مخزن شامل سورس اختصاصی محصول است؟**  
 خیر. این مخزن برای معرفی و توزیع محصول است. کد اختصاصی در بستهٔ مشتری به‌صورت کامپایل‌شده ارائه می‌شود. اعلان‌ها و فایل‌های الزامی اجزای ثالث همراه بسته حفظ می‌شوند.
@@ -86,8 +174,8 @@ Ubuntu 24.04 · x86_64 · English management menu
 
 ### وضعیت انتشار
 
-**نسخهٔ آزمایشی منتشرشده: [1.6.0-rc.2](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0-rc.2).**  
-بستهٔ کامپایل‌شده، نصب‌کننده و checksum آمادهٔ دریافت‌اند. آزمون‌های تکمیلی برای انتشار Stable ادامه دارند. فقط فایل‌هایی را دریافت کنید که همراه یادداشت انتشار و checksum در بخش Releases قرار گرفته‌اند.
+**نسخهٔ Stable: [1.6.0](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0).**  
+بستهٔ کامپایل‌شده، نصب‌کننده و checksum آمادهٔ دریافت‌اند. نصب، مدیریت سرویس‌ها، لایسنس، بازیابی پورت و Failover روی دو سرور آزمایشی بررسی شده‌اند. فقط فایل‌هایی را دریافت کنید که همراه یادداشت انتشار و checksum در بخش Releases قرار گرفته‌اند.
 
 **خرید و مدیریت اشتراک:** [@irsupplm_bot](https://t.me/irsupplm_bot)  
 **اخبار و نسخه‌های جدید:** [@irsuppchannel](https://t.me/irsuppchannel)
@@ -124,20 +212,81 @@ Multiple connection options, including **Rakhsh**, share the same management, mo
 
 **Requirements:** Ubuntu 24.04 on both servers, x86_64 / amd64, administrative access and a usable network path. The management menu is in English.
 
+### Install on both servers
+
+**A is the Iran-side server; B is the foreign server, in any country.** Download these three matching release assets and place them together on **both servers**:
+
+- `PXCloud-Tunnel-1.6.0-linux-x86_64.tar.gz`
+- `PXCloud-Tunnel-Install.sh`
+- `SHA256SUMS`
+
+GitHub's automatic **Source code** archives are not installers. In the directory containing the assets, run:
+
+```bash
+sha256sum -c SHA256SUMS
+sudo bash PXCloud-Tunnel-Install.sh
+sudo pxcloud --version
+```
+
+Stop if checksum verification fails and download the matching assets again. Connection engines are bundled; some system dependencies may still require Ubuntu repositories.
+
+### Configure the pair
+
+1. **Activate A.** Run `sudo pxcloud license` on A. Select **Activate Iran license** and enter your purchased key. The registered public IP must match A. **Activate exempt Iran IP** applies only to addresses previously exempted by the administrator.
+2. **Pair B.** On A, select **Pair foreign server (from Iran)**, enter B's public IP and an output path such as `/root/PXCloud-invitation.json`. Transfer this private file to B over SSH/SCP. On B, run `sudo pxcloud license`, choose **Join pair (on foreign server)** and enter the file path. Use the invitation within **15 minutes**.
+3. **Configure connections on A.** Open `sudo pxcloud`. Choose **5 — Server setup / Import B bundle**, select **A** and enter B's IP. A's IP is detected automatically, with an interactive prompt if detection fails. Install your chosen connections from **TUNNELS**. Install at least two paths for failover.
+4. **Configure B.** On A, choose **9 — Export B bundle**, for example `/root/PXCloud-B.json`, and transfer it privately to B. On B, choose **5**, select **B** and import that file. The offered connections are installed automatically. **The connection bundle is separate from the license invitation and contains private keys. Never post either file publicly.**
+5. **Route client traffic.** For services with client subnets, use **6 — Client ranges & firewall** to enter your actual ranges on both servers. Enable routing on **B first, then A**. No client subnet is preselected; the client route must already exist on A. This workflow routes IPv4 traffic. For **V2Ray / Xray**, use **15 — V2Ray / Xray Traffic** and follow its service-specific instructions instead of relying only on client subnets.
+6. **Check operation.** **7 — Quality dashboard** displays path health and the active path. Set **8 — Failover settings** to `auto` for automatic selection across installed paths, including Rakhsh. Quality checks and hold times prevent repeated unnecessary switching; exceeding a single fixed ping value does not always trigger a change.
+
+### Test and manage
+
+Prepare speed testing on **both servers**:
+
+```bash
+sudo pxcloud test-setup
+```
+
+Then test every installed path from A:
+
+```bash
+sudo pxcloud test --tunnel all --full --seconds 20 --streams 1
+```
+
+Results appear in a comparison table. `--streams 1` tests one TCP flow; `--streams 4` tests four concurrent flows. Upload/download are relative to the server running the test. These are **server-to-server** measurements, not Internet or game-server speeds. Speed tests may temporarily affect live traffic.
+
+| Task | Access |
+| :--- | :--- |
+| Open the menu | `sudo pxcloud` |
+| One-time status | `sudo pxcloud status` |
+| Installed version | `sudo pxcloud --version` |
+| License status | `sudo pxcloud license status` |
+| Start, stop, restart or reinstall | Select the connection, then the corresponding action |
+| Tests and results table | Menu 11 |
+| Path-change events | Menu 10 |
+| wg-custome port recovery settings | Menu 12 |
+| Remove product services | Menu 13; review the displayed message |
+
+Connections run as systemd services. Reinstalling through the connection menu preserves its keys. After adding a path or changing shared settings, export and import an updated B bundle.
+
+### Connection troubleshooting
+
+Check license validity and pairing, matching endpoint IPs, correct server clocks and the current B bundle first. Review path health in the dashboard and events in menu 10. Both the operating-system firewall and the datacenter firewall must permit the selected connection. Keep license keys, invitations and private bundles out of public reports.
+
 <details>
 <summary><strong>Operation & licensing</strong></summary>
 
 - Failover requires multiple installed paths and active monitoring. Stability checks reduce repeated switching; uninterrupted survival of every active session is not guaranteed.
 - Throughput depends on the network path and server capacity. The 100 Mbps default for new Rakhsh configurations is a configured cap, not a speed guarantee.
-- Online license checks run every six hours. Subscriptions have a six-hour expiry grace period; a valid license lease is also required.
+- Online verification follows a six-hour lease cycle; renewal starts two minutes before the deadline to avoid interruption while a response is in flight. Subscriptions have a six-hour expiry grace period; a valid license lease is also required.
 - This is a product distribution and documentation repository. Proprietary application code is supplied in compiled form. Required third-party notices and corresponding materials remain included.
 
 </details>
 
 ### Release status
 
-**Available preview: [1.6.0-rc.2](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0-rc.2).**  
-The compiled package, installer and checksums are available. Further validation for Stable is in progress. Use only assets accompanied by release notes and checksums in Releases.
+**Stable release: [1.6.0](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0).**  
+The compiled package, installer and checksums are available. Installation, service lifecycle, licensing, port recovery and failover have been exercised on a dedicated server pair. Use only assets accompanied by release notes and checksums in Releases.
 
 ---
 
