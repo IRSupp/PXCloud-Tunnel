@@ -8,14 +8,14 @@ Connect your servers. Manage your tunnels from one menu.
 
 <p>
 <a href="https://t.me/irsupplm_bot"><img alt="Buy a license" src="https://img.shields.io/badge/BUY_A_LICENSE-irsupplm__bot-F4B942?style=for-the-badge&logo=telegram&logoColor=white"></a>
-<a href="https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.0"><img alt="Download 1.7.0" src="https://img.shields.io/badge/DOWNLOAD-v1.7.0-2563EB?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.1"><img alt="Download 1.7.1" src="https://img.shields.io/badge/DOWNLOAD-v1.7.1-2563EB?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
 **[خرید لایسنس / Buy a license](https://t.me/irsupplm_bot) · [کانال تلگرام / Telegram channel](https://t.me/irsuppchannel)**
 
 [راهنمای فارسی](#فارسی) · [English guide](#english)
 
-نسخهٔ پایدار **1.7.0** · Ubuntu **24.04** · **x86_64 / amd64**
+نسخهٔ پایدار **1.7.1** · Ubuntu **24.04** · **x86_64 / amd64**
 
 </div>
 
@@ -48,23 +48,23 @@ PXCloud بین سرور ایران و سرور خارج شما اتصال برق
 
 **محل اجرا: یک بار روی ایران، یک بار روی خارج.**
 
-با کاربر `root` وارد شوید. تمام دستورهای این کادر را کپی و اجرا کنید؛ فایل‌های نسخهٔ 1.7.0 دریافت و بررسی می‌شوند و سپس نصب شروع می‌شود:
+با کاربر `root` وارد شوید. تمام دستورهای این کادر را کپی و اجرا کنید؛ فایل‌های نسخهٔ 1.7.1 دریافت و بررسی می‌شوند و سپس نصب شروع می‌شود:
 
 </div>
 
 ```bash
-mkdir -p /root/pxcloud-install-1.7.0 &&
-cd /root/pxcloud-install-1.7.0 &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.0/PXCloud-Tunnel-1.7.0-linux-x86_64.tar.gz &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.0/PXCloud-Tunnel-Install.sh &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.0/SHA256SUMS &&
+mkdir -p /root/pxcloud-install-1.7.1 &&
+cd /root/pxcloud-install-1.7.1 &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.1/PXCloud-Tunnel-1.7.1-linux-x86_64.tar.gz &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.1/PXCloud-Tunnel-Install.sh &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.1/SHA256SUMS &&
 sha256sum -c SHA256SUMS &&
 bash PXCloud-Tunnel-Install.sh
 ```
 
 <div dir="rtl">
 
-در پایان، با دستور زیر نسخه را ببینید. باید **1.7.0** نمایش داده شود:
+در پایان، با دستور زیر نسخه را ببینید. باید **1.7.1** نمایش داده شود:
 
 </div>
 
@@ -116,12 +116,24 @@ scp /root/PXCloud-invitation.json "root@${PXC_FOREIGN_IP}:/root/PXCloud-invitati
 **روی ایران** دستور `pxcloud` را بزنید:
 
 1. **1 — Rakhsh** و سپس **1 — Install** را انتخاب کنید.
-2. اگر اولین اتصال این جفت‌سرور است، نقش **A** و IP سرور خارج را وارد کنید. IP ایران خودکار تشخیص داده می‌شود؛ اگر تشخیص ممکن نباشد، برنامه از شما می‌پرسد.
-3. مقابل `Use advanced settings?` برای تنظیمات پیشنهادی فقط Enter بزنید. سؤال‌های پورت و تنظیمات سایر تانل‌ها نمایش داده نمی‌شوند.
-4. پس از نصب، بخش **Peer Setup** مسیر فایل خصوصی همین تانل و مراحل سمت مقابل را نشان می‌دهد. برای رخش، فایل `/etc/pxcloud/connections/next-peer.json` است.
-5. با **0** به منوی اصلی برگردید و دوباره **0** را بزنید تا بتوانید دستور انتقال فایل را اجرا کنید.
+2. اگر اولین اتصال این جفت‌سرور است، نقش **A** و IP سرور خارج را وارد کنید. IP ایران خودکار تشخیص داده می‌شود؛ اگر تشخیص ممکن نباشد، برنامه می‌پرسد.
+3. مقابل `Use advanced settings?` برای تنظیمات پیشنهادی فقط Enter بزنید. سؤال‌های سایر تانل‌ها نمایش داده نمی‌شوند.
+4. بعد از نصب، در منوی همین تانل **C — Current Config / Peer Setup** را باز کنید.
 
-**روی ایران** فایل رخش را به خارج بفرستید:
+**روی خارج** دستور `pxcloud` را بزنید، **1 — Rakhsh** و سپس **1 — Install** را انتخاب کنید. اگر نقش پرسیده شد، **B** را وارد کنید. برای وارد کردن تنظیمات سه راه دارید؛ فقط یکی را انجام دهید:
+
+| گزینهٔ سمت خارج | چه کار کنید؟ |
+| :--- | :--- |
+| **1 — Paste Connection Config** | روی ایران، داخل Current Config گزینهٔ **P** را بزنید و `SHOW` بنویسید. کل بلوک از `PXCT1:` تا `END` را کپی کنید و در سؤال سمت خارج بچسبانید. |
+| **2 — Import Config File** | فایل خصوصی نشان‌داده‌شده روی ایران را به خارج منتقل کنید؛ سپس مسیر آن را وارد کنید. دستور نمونه پایین همین بخش است. |
+| **3 — Manual Setup (step by step)** | روی ایران، داخل Current Config گزینهٔ **M** و سپس `SHOW` را بزنید. سمت خارج تک‌تک مقدارها را با همان ترتیب و عنوان می‌پرسد. برای لغو ورود دستی `BACK` بنویسید. |
+
+روش اول معمولاً ساده‌تر است. متن کپی‌شده و مقادیر دستی حاوی کلید خصوصی‌اند؛ آن‌ها را در کانال، گروه یا تیکت عمومی نگذارید. کد کپی‌شدنی صرفاً قالب انتقال است و رمزگذاری محسوب نمی‌شود. کلیدها و گواهی‌های روش دستی باید دقیقاً از خروجی ایران کپی شوند.
+
+<details>
+<summary><strong>اگر روش دوم، یعنی فایل، را انتخاب کردید</strong></summary>
+
+برای رخش، دستور زیر را **روی ایران** اجرا کنید. IP و در صورت نیاز رمز SSH سرور خارج را وارد کنید:
 
 </div>
 
@@ -132,13 +144,17 @@ scp /etc/pxcloud/connections/next-peer.json "root@${PXC_FOREIGN_IP}:/root/Rakhsh
 
 <div dir="rtl">
 
-**روی خارج** دستور `pxcloud` را اجرا کنید؛ **1 — Rakhsh**، سپس **I — Import Peer Config** را بزنید و مسیر `/root/Rakhsh-peer.json` را وارد کنید. فقط رخش نصب یا به‌روزرسانی می‌شود.
+در روش **Import Config File** سمت خارج، مسیر `/root/Rakhsh-peer.json` را وارد کنید. برای تونل‌های دیگر از مسیر نمایش‌داده‌شده در Current Config همان تونل استفاده کنید.
 
-**تنظیمات را گم کردید؟** داخل منوی همان تانل، **C — Current Config / Peer Setup** تنظیمات، وضعیت سرویس، مسیر فایل و مراحل سمت مقابل را نشان می‌دهد. کلیدهای خصوصی در نمایش عادی مخفی‌اند؛ گزینهٔ **P** و تأیید `SHOW` محتوای کامل فایل را نمایش می‌دهد. فایل را فقط به سرور مقابل خودتان بدهید.
+</details>
 
-برای Light Tunnel، wg-custume، GRE یا VXLAN هم همین مسیر را از منوی همان تانل بروید؛ هرکدام فایل مستقل دارند. اضافه کردن یا حذف یک تانل، تنظیمات و کلیدهای بقیه را عوض نمی‌کند. لایسنس و هویت جفت‌سرور، مسیریابی کاربران و Failover مشترک‌اند؛ هر لایسنس همچنان برای همان جفت ایران و خارج است.
+برای به‌روزرسانی تنظیمات اتصال موجود، در منوی همان تانل گزینهٔ **I — Connection Setup** همان سه روش را باز می‌کند. این کار فقط اتصال انتخاب‌شده را نصب یا به‌روزرسانی می‌کند؛ فایل تانل یا جفت‌سرور دیگر رد می‌شود.
 
-**دو فایل را اشتباه نگیرید:** `PXCloud-invitation.json` برای جفت‌سازی لایسنس است؛ فایل `*-peer.json` برای اتصال همان تانل. نمایش `active` فقط وضعیت سرویس محلی است؛ ارتباط دو سمت را در بخش تست بررسی کنید.
+**Current Config** همیشه تنظیمات ذخیره‌شده و وضعیت سرویس محلی را نشان می‌دهد. کلیدهای خصوصی در نمایش عادی مخفی‌اند. گزینهٔ **F** با تأیید `SHOW` محتوای کامل فایل خصوصی را نمایش می‌دهد. در تنظیمات رخش، نوع انتقال با نام **UDP** یا **TCP** دیده می‌شود.
+
+برای Light Tunnel، wg-custume، GRE و VXLAN هم از منوی همان تانل بروید. هرکدام تنظیمات مستقل دارند؛ افزودن یا حذف یک تانل کلیدهای بقیه را تغییر نمی‌دهد. لایسنس، هویت جفت‌سرور، مسیریابی کاربران و Failover مشترک‌اند.
+
+**فایل معرفی مرحلهٔ ۳ هنوز لازم است:** `PXCloud-invitation.json` برای جفت‌سازی لایسنس است و این سه روش جای آن را نمی‌گیرند. نمایش `active` فقط وضعیت سرویس محلی است؛ ارتباط دو سمت را در بخش تست بررسی کنید.
 
 ### ۵. مشخص کنید ترافیک چه سرویسی از تانل عبور کند
 
@@ -246,9 +262,9 @@ pxcloud test --tunnel all --full --seconds 20 --streams 1
 | **Q / F / G / T / W** | داشبورد / تغییر مسیر خودکار / رویدادها / تست / بازیابی پورت |
 | **L / X / 0** | لایسنس / حذف / خروج یا بازگشت |
 
-`L` برای License محفوظ است؛ Event Log با `G` باز می‌شود. حذف با `X` همچنان تأیید جداگانه می‌خواهد. رنگ‌ها فقط در ترمینال سازگار نمایش داده می‌شوند. این کلیدها مربوط به نسخهٔ **1.7.0** هستند؛ شماره‌های نسخه‌های قبلی متفاوت‌اند.
+`L` برای License محفوظ است؛ Event Log با `G` باز می‌شود. حذف با `X` همچنان تأیید جداگانه می‌خواهد. رنگ‌ها فقط در ترمینال سازگار نمایش داده می‌شوند. این کلیدها مربوط به نسخهٔ **1.7.1** هستند؛ شماره‌های نسخه‌های قبلی متفاوت‌اند.
 
-نصب‌های قبلی بدون ساخت مجدد اتصال‌ها قابل استفاده‌اند. برای گرفتن فایل مستقل، روی ایران وارد **Current Config** همان تانل شوید. ابتدا هر دو سمت را به نسخهٔ جدید ارتقا دهید. فایل‌های قدیمی چندتانلی فقط برای سازگاری در مسیر قدیمی Import پذیرفته می‌شوند؛ آن‌ها را در Import Peer Config وارد نکنید.
+نصب‌های قبلی بدون ساخت مجدد اتصال‌ها قابل استفاده‌اند. برای گرفتن فایل مستقل، روی ایران وارد **Current Config** همان تانل شوید. ابتدا هر دو سمت را به نسخهٔ جدید ارتقا دهید. فایل‌های قدیمی چندتانلی فقط برای سازگاری در مسیر قدیمی Import پذیرفته می‌شوند؛ آن‌ها را در Connection Setup وارد نکنید.
 
 ### اگر به مشکل خوردید
 
@@ -298,7 +314,7 @@ pxcloud license recover
 
 </details>
 
-هنگام گزارش خطا، شمارهٔ مرحله و متن خطا را بفرستید؛ رمز سرور، کلید لایسنس و فایل‌های خصوصی را در پیام عمومی نگذارید. جزئیات تغییرات و تست‌های نسخه در **[صفحهٔ انتشار 1.7.0](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.0)** است.
+هنگام گزارش خطا، شمارهٔ مرحله و متن خطا را بفرستید؛ رمز سرور، کلید لایسنس و فایل‌های خصوصی را در پیام عمومی نگذارید. جزئیات تغییرات و تست‌های نسخه در **[صفحهٔ انتشار 1.7.1](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.1)** است.
 
 </div>
 
@@ -327,19 +343,19 @@ If your Iran IP has already been exempted by the administrator, see **Exempt IPs
 
 ### 2. Install on both servers
 
-**Run this once on Iran and once on Foreign, logged in as root.** Copy the whole block. It downloads, checks and installs version 1.7.0:
+**Run this once on Iran and once on Foreign, logged in as root.** Copy the whole block. It downloads, checks and installs version 1.7.1:
 
 ```bash
-mkdir -p /root/pxcloud-install-1.7.0 &&
-cd /root/pxcloud-install-1.7.0 &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.0/PXCloud-Tunnel-1.7.0-linux-x86_64.tar.gz &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.0/PXCloud-Tunnel-Install.sh &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.0/SHA256SUMS &&
+mkdir -p /root/pxcloud-install-1.7.1 &&
+cd /root/pxcloud-install-1.7.1 &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.1/PXCloud-Tunnel-1.7.1-linux-x86_64.tar.gz &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.1/PXCloud-Tunnel-Install.sh &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.1/SHA256SUMS &&
 sha256sum -c SHA256SUMS &&
 bash PXCloud-Tunnel-Install.sh
 ```
 
-Check the installed version; it should show **1.7.0**:
+Check the installed version; it should show **1.7.1**:
 
 ```bash
 pxcloud --version
@@ -379,25 +395,41 @@ Use the invitation within **15 minutes**. If it expires, create and transfer a f
 **On Iran**, run `pxcloud`:
 
 1. Select **1 — Rakhsh**, then **1 — Install**.
-2. For the first connection in this server pair, choose **A** and enter the foreign server IP. The local IP is detected automatically; inconclusive detection prompts for it.
-3. Press Enter at `Use advanced settings?` to keep the recommended defaults. Other tunnels' settings are not requested.
-4. **Peer Setup** displays the private connection file and steps for the other server. Rakhsh uses `/etc/pxcloud/connections/next-peer.json`.
-5. Select **0** to return, then **0** again to exit to your shell.
+2. For the first connection in this pair, choose **A** and enter the foreign server IP. The local IP is detected automatically, or requested if detection is inconclusive.
+3. Press Enter at `Use advanced settings?` for the recommended defaults. Other tunnels' settings are not requested.
+4. After installation, open **C — Current Config / Peer Setup** in this tunnel's menu.
 
-Transfer Rakhsh's file **from Iran**:
+**On Foreign**, run `pxcloud`, select **1 — Rakhsh**, then **1 — Install**. Choose **B** if asked for the role. Choose just one of these three methods:
+
+| Foreign setup option | What to do |
+| :--- | :--- |
+| **1 — Paste Connection Config** | On Iran, choose **P** in Current Config and type `SHOW`. Copy the entire block from `PXCT1:` through `END` and paste it into the Foreign prompt. |
+| **2 — Import Config File** | Transfer the private peer file from Iran, then enter its local path on Foreign. See the example below. |
+| **3 — Manual Setup (step by step)** | On Iran, choose **M** in Current Config, then `SHOW`. Enter each displayed value at the matching Foreign prompt, in the same order. Type `BACK` to cancel manual entry. |
+
+Paste is usually the simplest option. The block and manual values contain private keys; keep them out of public messages. The copyable code is a transfer format, not encryption. Copy certificates and keys exactly from Iran.
+
+<details>
+<summary><strong>If you selected Import Config File</strong></summary>
+
+For Rakhsh, run this **on Iran**. Enter the Foreign IP and SSH password if requested:
 
 ```bash
 read -r -p "Foreign server IP: " PXC_FOREIGN_IP &&
 scp /etc/pxcloud/connections/next-peer.json "root@${PXC_FOREIGN_IP}:/root/Rakhsh-peer.json"
 ```
 
-**On Foreign**, run `pxcloud`, select **1 — Rakhsh**, then **I — Import Peer Config** and enter `/root/Rakhsh-peer.json`. Only Rakhsh is installed or updated.
+Enter `/root/Rakhsh-peer.json` in **Import Config File** on Foreign. For another tunnel, use the path in its own Current Config.
 
-**Need the settings again?** Open that tunnel's **C — Current Config / Peer Setup**. It shows saved settings, local service state, the file location and peer instructions. Secrets are hidden by default; **P** followed by the explicit confirmation `SHOW` displays the complete private file. Transfer it only to your own peer server.
+</details>
 
-Use the same flow from the individual Light Tunnel, wg-custume, GRE or VXLAN menu. Each connection has its own file. Adding or removing a tunnel preserves the other connections' settings and keys. Licensing, server-pair identity, traffic routing and failover remain coordinated for the same licensed Iran/foreign pair.
+To update an existing connection, open **I — Connection Setup** in that tunnel's menu. It offers the same three methods. Only the selected tunnel is installed or updated; wrong-tunnel and wrong-pair settings are rejected.
 
-**Do not confuse the files:** `PXCloud-invitation.json` pairs the license; `*-peer.json` configures one tunnel. A local service showing `active` does not prove end-to-end connectivity; check it in Tunnel tests.
+**Current Config** shows saved settings and local service state at any time. Secrets remain hidden by default. **F**, followed by `SHOW`, displays the full private file. Rakhsh's transport setting is displayed as **UDP** or **TCP**.
+
+The same workflow applies to Light Tunnel, wg-custume, GRE and VXLAN. Each has independent connection settings. Adding or removing one preserves the other connections' keys. Licensing, server-pair identity, user routing and failover remain shared.
+
+**Step 3 still applies:** `PXCloud-invitation.json` pairs the license; these three methods do not replace it. A local `active` service does not prove end-to-end connectivity; use Tunnel tests.
 
 ### 5. Choose which user traffic uses the tunnel
 
@@ -493,9 +525,9 @@ The bold yellow **Server IPv4** line above the menu identifies the current serve
 | **Q / F / G / T / W** | Quality dashboard / Failover / Event log / Tests / Port recovery |
 | **L / X / 0** | Licensing / Uninstall / Exit or Back |
 
-`L` is reserved for License; Event Log uses `G`. Uninstall with `X` still requires confirmation. Colors appear only in supported terminals. These keys apply to **1.7.0**; earlier versions use different numbers.
+`L` is reserved for License; Event Log uses `G`. Uninstall with `X` still requires confirmation. Colors appear only in supported terminals. These keys apply to **1.7.1**; earlier versions use different numbers.
 
-Existing connections remain usable without rebuilding them. Upgrade both endpoints before using the new peer files. On Iran, open the connection's **Current Config** to generate its own file. Legacy multi-tunnel bundles remain supported only by the legacy import path; do not use them with Import Peer Config.
+Existing connections remain usable without rebuilding them. Upgrade both endpoints before using the new peer files. On Iran, open the connection's **Current Config** to generate its own file. Legacy multi-tunnel bundles remain supported only by the legacy import path; do not use them with Connection Setup.
 
 ### Troubleshooting
 
@@ -541,12 +573,12 @@ Recovery requires a valid local backup and fresh online approval. It does not re
 
 </details>
 
-When reporting an error, include the step number and error text. Keep server passwords, license keys and private files out of public messages. See the **[1.7.0 release notes](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.0)** for changes, validation details and signed-checksum instructions.
+When reporting an error, include the step number and error text. Keep server passwords, license keys and private files out of public messages. See the **[1.7.1 release notes](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.1)** for changes, validation details and signed-checksum instructions.
 
 ---
 
 <div align="center">
 
-**[خرید لایسنس / Buy a license](https://t.me/irsupplm_bot) · [کانال رسمی / Official channel](https://t.me/irsuppchannel) · [دانلود / Downloads](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.0)**
+**[خرید لایسنس / Buy a license](https://t.me/irsupplm_bot) · [کانال رسمی / Official channel](https://t.me/irsuppchannel) · [دانلود / Downloads](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.1)**
 
 </div>
