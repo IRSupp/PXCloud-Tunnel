@@ -271,7 +271,7 @@ pxcloud test --tunnel all --full --seconds 20 --streams 1
 
 از نسخهٔ **1.7.2** به بعد، در منوی اصلی **U — Update to latest stable version** را بزنید. برنامه آخرین نسخهٔ پایدار گیت‌هاب را بررسی می‌کند؛ اگر جدیدتر باشد، دانلود و پس از تأیید امضا و صحت فایل‌ها نصب می‌شود. بعد، منوی نسخهٔ جدید خودکار باز می‌شود. اگر آپدیتی نباشد، چیزی تغییر نمی‌کند.
 
-**روی هر دو سرور جداگانه انجام دهید.** تنظیمات و لایسنس حفظ می‌شوند و سرویس‌های در حال اجرا خودکار ری‌استارت نمی‌شوند. اگر نصب یا بررسی نسخه شکست بخورد، برنامه تلاش می‌کند مسیر اجرا و لانچر قبلی را برگرداند. در صورت باز بودن عملیات تنظیمات در نشست دیگر، ابتدا از زیرمنوی آن نشست خارج شوید و دوباره U را بزنید.
+**روی هر دو سرور جداگانه انجام دهید.** تنظیمات و لایسنس حفظ می‌شوند و سرویس‌های در حال اجرا خودکار ری‌استارت نمی‌شوند. اگر نصب یا بررسی نسخه شکست بخورد، برنامه تلاش می‌کند مسیر اجرا و لانچر قبلی را برگرداند. اگر نشست قبلی در تنظیمات منتظر ورودی باشد، بسته می‌شود و نشست جدید جای آن را می‌گیرد. تغییرات ذخیره‌نشدهٔ نشست قبلی اعمال نمی‌شوند. اگر قبلی وسط نصب یا اعمال تغییرات باشد، نشست جدید تا پایان امن عملیات صبر می‌کند؛ سرویس‌های تانل قطع نمی‌شوند.
 
 برای انجام همین کار بدون ورود به منو:
 
@@ -293,7 +293,7 @@ pxcloud update --check
 
 <div dir="rtl">
 
-**اگر نسخهٔ فعلی شما 1.7.1 یا قدیمی‌تر است، یک بار با دستورهای مرحلهٔ ۲ ارتقا دهید تا گزینهٔ U اضافه شود.** از آن به بعد آپدیت از داخل برنامه انجام می‌شود. این گزینه با انتخاب شما اجرا می‌شود؛ بررسی یا نصب زمان‌بندی‌شدهٔ پس‌زمینه ندارد. در خطای اینترنت، امضا یا checksum، فایل دریافت‌شده نصب نمی‌شود.
+**اگر نسخهٔ فعلی شما 1.7.1 یا قدیمی‌تر است، یک بار با دستورهای مرحلهٔ ۲ ارتقا دهید تا گزینهٔ U اضافه شود.** از آن به بعد آپدیت از داخل برنامه انجام می‌شود. **اگر قبلاً بستهٔ اولیهٔ 1.7.2 را گرفته‌اید، برای دریافت اصلاح نشست‌ها همان دستورهای مرحلهٔ ۲ را دوباره اجرا کنید؛ شمارهٔ نسخه تغییر نکرده است. نشست‌های بازِ بستهٔ قدیمی را یک بار ببندید و دوباره باز کنید.** این گزینه با انتخاب شما اجرا می‌شود؛ بررسی یا نصب زمان‌بندی‌شدهٔ پس‌زمینه ندارد. در خطای اینترنت، امضا یا checksum، فایل دریافت‌شده نصب نمی‌شود.
 
 ### اگر به مشکل خوردید
 
@@ -563,7 +563,7 @@ Existing connections remain usable without rebuilding them. Upgrade both endpoin
 
 Starting with **1.7.2**, select **U — Update to latest stable version** in the main menu. A newer stable GitHub release is downloaded, its signature and checksums are verified, and the package is installed. The updated menu opens automatically. If there is no newer version, nothing changes.
 
-**Run the update on each endpoint separately.** Settings and licensing are preserved; running services are not restarted automatically. If installation or the version check fails, the updater attempts to restore the previous program link and launcher. If another session holds the configuration lock, leave that session's submenu and retry.
+**Run the update on each endpoint separately.** Settings and licensing are preserved; running services are not restarted automatically. If installation or the version check fails, the updater attempts to restore the previous program link and launcher. A newer configuration session replaces an older session waiting for input; unsaved answers are discarded. If the old session is applying changes, the new one waits for that operation to finish safely. Tunnel services are not terminated.
 
 The equivalent command is:
 
@@ -577,7 +577,7 @@ To check only, without downloading or installing the package:
 pxcloud update --check
 ```
 
-**For 1.7.1 or earlier, upgrade once using step 2 to obtain the U option.** Later updates can use the menu. Updates run only when requested; there is no background auto-install schedule. Network, signature or checksum failures prevent installation.
+**For 1.7.1 or earlier, upgrade once using step 2 to obtain the U option.** Later updates can use the menu. **If you installed the initial 1.7.2 package, rerun step 2 to get the session fix: the version number is unchanged. Close and reopen old-version menu processes once.** Updates run only when requested; there is no background auto-install schedule. Network, signature or checksum failures prevent installation.
 
 ### Troubleshooting
 
