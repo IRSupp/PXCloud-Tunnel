@@ -148,7 +148,17 @@ scp /etc/pxcloud/connections/next-peer.json "root@${PXC_FOREIGN_IP}:/root/Rakhsh
 
 </details>
 
-**ویرایش رخش بعد از نصب:** روی ایران یا خارج، وارد **Rakhsh → 8 — Edit connection settings** شوید. مقدار خالی یعنی حفظ مقدار فعلی. تغییرات را مرور و با `y` اعمال کنید. پورت، نوع انتقال و پروفایل باید در هر دو سمت یکسان باشند؛ سمت دیگر خودکار تغییر نمی‌کند. محدودیت سرعت مربوط به ترافیک خروجی همان سرور است. کلیدهای اتصال حفظ می‌شوند؛ برای این تغییرها نیازی به ورود دوبارهٔ فایل نیست.
+**ویرایش تنظیمات بعد از نصب:** روی ایران یا خارج، وارد منوی همان تانل و سپس **8 — Edit connection settings** شوید. مقدار خالی یعنی حفظ مقدار فعلی. تغییرات را مرور و با `y` اعمال کنید. سمت دیگر خودکار تغییر نمی‌کند؛ مقدارهای مشترک را در هر دو سمت یکسان تنظیم کنید. کلیدهای اتصال و تنظیمات سایر تانل‌ها حفظ می‌شوند.
+
+| تانل | تنظیمات قابل ویرایش |
+| :--- | :--- |
+| Rakhsh | پروفایل، UDP/TCP، پورت و سقف سرعت خروجی همان سرور |
+| Light Tunnel | پورت ایران؛ این مقدار را روی هر دو سمت یکسان وارد کنید |
+| wg-custume | پورت ایران و پورت خارج؛ بازیابی خودکار، پورت‌های جایگزین و زمان‌بندی خود را حفظ می‌کند |
+| GRE | شناسهٔ GRE؛ روی هر دو سمت یکسان |
+| VXLAN | پورت و VNI؛ روی هر دو سمت یکسان |
+
+برای این تغییرها نیازی به ورود دوبارهٔ فایل نیست. بدون تغییر مقدار یا با رد تأیید، سرویس ری‌استارت نمی‌شود. تغییر مقدارهای مشترک می‌تواند تا یکسان‌شدن دو سمت، اتصال را قطع کند.
 
 برای به‌روزرسانی تنظیمات اتصال موجود، در منوی همان تانل گزینهٔ **I — Connection Setup** همان سه روش را باز می‌کند. این کار فقط اتصال انتخاب‌شده را نصب یا به‌روزرسانی می‌کند؛ فایل تانل یا جفت‌سرور دیگر رد می‌شود.
 
@@ -456,7 +466,17 @@ Enter `/root/Rakhsh-peer.json` in **Import Config File** on Foreign. For another
 
 </details>
 
-**Edit Rakhsh after installation:** on either endpoint, open **Rakhsh → 8 — Edit connection settings**. Press Enter to keep a value, review your changes, then confirm with `y`. Match profile, transport and port on both servers; the peer is not changed automatically. The rate limit controls this server’s outbound traffic. Keys are preserved, and no config-file import is required for these edits.
+**Edit settings after installation:** on either endpoint, open the selected tunnel and choose **8 — Edit connection settings**. Press Enter to retain a value, review the changes, then confirm with `y`. The peer is not updated automatically. Existing keys and other tunnels are preserved.
+
+| Tunnel | Editable settings |
+| :--- | :--- |
+| Rakhsh | Profile, UDP/TCP, port and this server's outbound rate limit |
+| Light Tunnel | Iran port; enter the same value on both endpoints |
+| wg-custume | Iran and foreign ports; recovery alternate ports and timing are retained |
+| GRE | GRE identifier; match both endpoints |
+| VXLAN | Port and VNI; match both endpoints |
+
+No config-file import is required for these edits. Unchanged values and cancellation do not restart services. Changing shared values may interrupt traffic until both endpoints match.
 
 To update an existing connection, open **I — Connection Setup** in that tunnel's menu. It offers the same three methods. Only the selected tunnel is installed or updated; wrong-tunnel and wrong-pair settings are rejected.
 
