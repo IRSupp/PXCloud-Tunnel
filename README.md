@@ -8,14 +8,14 @@ Connect your servers. Manage your tunnels from one menu.
 
 <p>
 <a href="https://t.me/irsupplm_bot"><img alt="Buy a license" src="https://img.shields.io/badge/BUY_A_LICENSE-irsupplm__bot-F4B942?style=for-the-badge&logo=telegram&logoColor=white"></a>
-<a href="https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.2"><img alt="Download 1.7.2" src="https://img.shields.io/badge/DOWNLOAD-v1.7.2-2563EB?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.3"><img alt="Download 1.7.3" src="https://img.shields.io/badge/DOWNLOAD-v1.7.3-2563EB?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
 **[خرید لایسنس / Buy a license](https://t.me/irsupplm_bot) · [کانال تلگرام / Telegram channel](https://t.me/irsuppchannel)**
 
 [راهنمای فارسی](#فارسی) · [English guide](#english)
 
-نسخهٔ پایدار **1.7.2** · Ubuntu **24.04** · **x86_64 / amd64**
+نسخهٔ پایدار **1.7.3** · Ubuntu **24.04** · **x86_64 / amd64**
 
 </div>
 
@@ -48,23 +48,23 @@ PXCloud بین سرور ایران و سرور خارج شما اتصال برق
 
 **محل اجرا: یک بار روی ایران، یک بار روی خارج.**
 
-با کاربر `root` وارد شوید. تمام دستورهای این کادر را کپی و اجرا کنید؛ فایل‌های نسخهٔ 1.7.2 دریافت و بررسی می‌شوند و سپس نصب شروع می‌شود:
+با کاربر `root` وارد شوید. تمام دستورهای این کادر را کپی و اجرا کنید؛ فایل‌های نسخهٔ 1.7.3 دریافت و بررسی می‌شوند و سپس نصب شروع می‌شود:
 
 </div>
 
 ```bash
-mkdir -p /root/pxcloud-install-1.7.2 &&
-cd /root/pxcloud-install-1.7.2 &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.2/PXCloud-Tunnel-1.7.2-linux-x86_64.tar.gz &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.2/PXCloud-Tunnel-Install.sh &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.2/SHA256SUMS &&
+mkdir -p /root/pxcloud-install-1.7.3 &&
+cd /root/pxcloud-install-1.7.3 &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.3/PXCloud-Tunnel-1.7.3-linux-x86_64.tar.gz &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.3/PXCloud-Tunnel-Install.sh &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.3/SHA256SUMS &&
 sha256sum -c SHA256SUMS &&
 bash PXCloud-Tunnel-Install.sh
 ```
 
 <div dir="rtl">
 
-در پایان، با دستور زیر نسخه را ببینید. باید **1.7.2** نمایش داده شود:
+در پایان، با دستور زیر نسخه را ببینید. باید **1.7.3** نمایش داده شود:
 
 </div>
 
@@ -118,13 +118,13 @@ scp /root/PXCloud-invitation.json "root@${PXC_FOREIGN_IP}:/root/PXCloud-invitati
 1. **1 — Rakhsh** و سپس **1 — Install** را انتخاب کنید.
 2. اگر اولین اتصال این جفت‌سرور است، نقش **A** و IP سرور خارج را وارد کنید. IP ایران خودکار تشخیص داده می‌شود؛ اگر تشخیص ممکن نباشد، برنامه می‌پرسد.
 3. مقابل `Use advanced settings?` برای تنظیمات پیشنهادی فقط Enter بزنید. سؤال‌های سایر تانل‌ها نمایش داده نمی‌شوند.
-4. بعد از نصب، در منوی همین تانل **C — Current Config / Peer Setup** را باز کنید.
+4. بلافاصله بعد از نصب موفق، عنوان زرد **SERVER B CONNECTION CONFIG** و زیر آن متن کامل کانفیگ نمایش داده می‌شود. همهٔ خط‌ها را از `PXCT1:` تا `END` کپی کنید. تا Enter نزنید، برنامه به منو برنمی‌گردد. مسیر فایل خصوصی هم بالای همین بخش نوشته شده است.
 
 **روی خارج** دستور `pxcloud` را بزنید، **1 — Rakhsh** و سپس **1 — Install** را انتخاب کنید. اگر نقش پرسیده شد، **B** را وارد کنید. برای وارد کردن تنظیمات سه راه دارید؛ فقط یکی را انجام دهید:
 
 | گزینهٔ سمت خارج | چه کار کنید؟ |
 | :--- | :--- |
-| **1 — Paste Connection Config** | روی ایران، داخل Current Config گزینهٔ **P** را بزنید و `SHOW` بنویسید. کل بلوک از `PXCT1:` تا `END` را کپی کنید و در سؤال سمت خارج بچسبانید. |
+| **1 — Paste Connection Config** | بلوک نمایش‌داده‌شده در پایان نصب ایران را از `PXCT1:` تا `END` کپی کنید و در سؤال سمت خارج بچسبانید. اگر صفحه را بسته‌اید، روی ایران **C — Current Config → P** و سپس `SHOW` آن را دوباره نمایش می‌دهد. |
 | **2 — Import Config File** | فایل خصوصی نشان‌داده‌شده روی ایران را به خارج منتقل کنید؛ سپس مسیر آن را وارد کنید. دستور نمونه پایین همین بخش است. |
 | **3 — Manual Setup (step by step)** | روی ایران، داخل Current Config گزینهٔ **M** و سپس `SHOW` را بزنید. سمت خارج تک‌تک مقدارها را با همان ترتیب و عنوان می‌پرسد. برای لغو ورود دستی `BACK` بنویسید. |
 
@@ -263,7 +263,7 @@ pxcloud test --tunnel all --full --seconds 20 --streams 1
 | **U** | دریافت و نصب آخرین نسخهٔ پایدار |
 | **L / X / 0** | لایسنس / حذف / خروج یا بازگشت |
 
-`L` برای License محفوظ است؛ Event Log با `G` باز می‌شود. حذف با `X` همچنان تأیید جداگانه می‌خواهد. رنگ‌ها فقط در ترمینال سازگار نمایش داده می‌شوند. این کلیدها مربوط به نسخهٔ **1.7.2** هستند؛ شماره‌های نسخه‌های قبلی متفاوت‌اند.
+`L` برای License محفوظ است؛ Event Log با `G` باز می‌شود. حذف با `X` همچنان تأیید جداگانه می‌خواهد. رنگ‌ها فقط در ترمینال سازگار نمایش داده می‌شوند. این کلیدها مربوط به نسخهٔ **1.7.3** هستند؛ شماره‌های نسخه‌های قبلی متفاوت‌اند.
 
 نصب‌های قبلی بدون ساخت مجدد اتصال‌ها قابل استفاده‌اند. برای گرفتن فایل مستقل، روی ایران وارد **Current Config** همان تانل شوید. ابتدا هر دو سمت را به نسخهٔ جدید ارتقا دهید. فایل‌های قدیمی چندتانلی فقط برای سازگاری در مسیر قدیمی Import پذیرفته می‌شوند؛ آن‌ها را در Connection Setup وارد نکنید.
 
@@ -293,7 +293,7 @@ pxcloud update --check
 
 <div dir="rtl">
 
-**اگر نسخهٔ فعلی شما 1.7.1 یا قدیمی‌تر است، یک بار با دستورهای مرحلهٔ ۲ ارتقا دهید تا گزینهٔ U اضافه شود.** از آن به بعد آپدیت از داخل برنامه انجام می‌شود. **اگر قبلاً بستهٔ اولیهٔ 1.7.2 را گرفته‌اید، برای دریافت اصلاح نشست‌ها همان دستورهای مرحلهٔ ۲ را دوباره اجرا کنید؛ شمارهٔ نسخه تغییر نکرده است. نشست‌های بازِ بستهٔ قدیمی را یک بار ببندید و دوباره باز کنید.** این گزینه با انتخاب شما اجرا می‌شود؛ بررسی یا نصب زمان‌بندی‌شدهٔ پس‌زمینه ندارد. در خطای اینترنت، امضا یا checksum، فایل دریافت‌شده نصب نمی‌شود.
+**اگر نسخهٔ فعلی شما 1.7.1 یا قدیمی‌تر است، یک بار با دستورهای مرحلهٔ ۲ ارتقا دهید تا گزینهٔ U اضافه شود.** از آن به بعد آپدیت از داخل برنامه انجام می‌شود. پس از ارتقا، منوهای قدیمیِ باز را ببندید و دوباره باز کنید. این گزینه با انتخاب شما اجرا می‌شود؛ بررسی یا نصب زمان‌بندی‌شدهٔ پس‌زمینه ندارد. در خطای اینترنت، امضا یا checksum، فایل دریافت‌شده نصب نمی‌شود.
 
 ### اگر به مشکل خوردید
 
@@ -343,7 +343,7 @@ pxcloud license recover
 
 </details>
 
-هنگام گزارش خطا، شمارهٔ مرحله و متن خطا را بفرستید؛ رمز سرور، کلید لایسنس و فایل‌های خصوصی را در پیام عمومی نگذارید. جزئیات تغییرات و تست‌های نسخه در **[صفحهٔ انتشار 1.7.2](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.2)** است.
+هنگام گزارش خطا، شمارهٔ مرحله و متن خطا را بفرستید؛ رمز سرور، کلید لایسنس و فایل‌های خصوصی را در پیام عمومی نگذارید. جزئیات تغییرات و تست‌های نسخه در **[صفحهٔ انتشار 1.7.3](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.3)** است.
 
 </div>
 
@@ -372,19 +372,19 @@ If your Iran IP has already been exempted by the administrator, see **Exempt IPs
 
 ### 2. Install on both servers
 
-**Run this once on Iran and once on Foreign, logged in as root.** Copy the whole block. It downloads, checks and installs version 1.7.2:
+**Run this once on Iran and once on Foreign, logged in as root.** Copy the whole block. It downloads, checks and installs version 1.7.3:
 
 ```bash
-mkdir -p /root/pxcloud-install-1.7.2 &&
-cd /root/pxcloud-install-1.7.2 &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.2/PXCloud-Tunnel-1.7.2-linux-x86_64.tar.gz &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.2/PXCloud-Tunnel-Install.sh &&
-curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.2/SHA256SUMS &&
+mkdir -p /root/pxcloud-install-1.7.3 &&
+cd /root/pxcloud-install-1.7.3 &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.3/PXCloud-Tunnel-1.7.3-linux-x86_64.tar.gz &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.3/PXCloud-Tunnel-Install.sh &&
+curl -fLO https://github.com/IRSupp/PXCloud-Tunnel/releases/download/v1.7.3/SHA256SUMS &&
 sha256sum -c SHA256SUMS &&
 bash PXCloud-Tunnel-Install.sh
 ```
 
-Check the installed version; it should show **1.7.2**:
+Check the installed version; it should show **1.7.3**:
 
 ```bash
 pxcloud --version
@@ -426,13 +426,13 @@ Use the invitation within **15 minutes**. If it expires, create and transfer a f
 1. Select **1 — Rakhsh**, then **1 — Install**.
 2. For the first connection in this pair, choose **A** and enter the foreign server IP. The local IP is detected automatically, or requested if detection is inconclusive.
 3. Press Enter at `Use advanced settings?` for the recommended defaults. Other tunnels' settings are not requested.
-4. After installation, open **C — Current Config / Peer Setup** in this tunnel's menu.
+4. After successful installation, the yellow **SERVER B CONNECTION CONFIG** heading appears automatically, followed by the complete connection block. Copy every line from `PXCT1:` through `END`. The menu waits until you press Enter. The saved private file path appears above this section.
 
 **On Foreign**, run `pxcloud`, select **1 — Rakhsh**, then **1 — Install**. Choose **B** if asked for the role. Choose just one of these three methods:
 
 | Foreign setup option | What to do |
 | :--- | :--- |
-| **1 — Paste Connection Config** | On Iran, choose **P** in Current Config and type `SHOW`. Copy the entire block from `PXCT1:` through `END` and paste it into the Foreign prompt. |
+| **1 — Paste Connection Config** | Copy the block shown automatically after installation on Iran, from `PXCT1:` through `END`, and paste it into the Foreign prompt. To display it again later, use **C — Current Config → P**, then type `SHOW` on Iran. |
 | **2 — Import Config File** | Transfer the private peer file from Iran, then enter its local path on Foreign. See the example below. |
 | **3 — Manual Setup (step by step)** | On Iran, choose **M** in Current Config, then `SHOW`. Enter each displayed value at the matching Foreign prompt, in the same order. Type `BACK` to cancel manual entry. |
 
@@ -555,7 +555,7 @@ The bold yellow **Server IPv4** line above the menu identifies the current serve
 | **U** | Download and install the latest stable version |
 | **L / X / 0** | Licensing / Uninstall / Exit or Back |
 
-`L` is reserved for License; Event Log uses `G`. Uninstall with `X` still requires confirmation. Colors appear only in supported terminals. These keys apply to **1.7.2**; earlier versions use different numbers.
+`L` is reserved for License; Event Log uses `G`. Uninstall with `X` still requires confirmation. Colors appear only in supported terminals. These keys apply to **1.7.3**; earlier versions use different numbers.
 
 Existing connections remain usable without rebuilding them. Upgrade both endpoints before using the new peer files. On Iran, open the connection's **Current Config** to generate its own file. Legacy multi-tunnel bundles remain supported only by the legacy import path; do not use them with Connection Setup.
 
@@ -577,7 +577,7 @@ To check only, without downloading or installing the package:
 pxcloud update --check
 ```
 
-**For 1.7.1 or earlier, upgrade once using step 2 to obtain the U option.** Later updates can use the menu. **If you installed the initial 1.7.2 package, rerun step 2 to get the session fix: the version number is unchanged. Close and reopen old-version menu processes once.** Updates run only when requested; there is no background auto-install schedule. Network, signature or checksum failures prevent installation.
+**For 1.7.1 or earlier, upgrade once using step 2 to obtain the U option.** Later updates can use the menu. Close and reopen old menu processes after upgrading. Updates run only when requested; there is no background auto-install schedule. Network, signature or checksum failures prevent installation.
 
 ### Troubleshooting
 
@@ -623,12 +623,12 @@ Recovery requires a valid local backup and fresh online approval. It does not re
 
 </details>
 
-When reporting an error, include the step number and error text. Keep server passwords, license keys and private files out of public messages. See the **[1.7.2 release notes](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.2)** for changes, validation details and signed-checksum instructions.
+When reporting an error, include the step number and error text. Keep server passwords, license keys and private files out of public messages. See the **[1.7.3 release notes](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.3)** for changes, validation details and signed-checksum instructions.
 
 ---
 
 <div align="center">
 
-**[خرید لایسنس / Buy a license](https://t.me/irsupplm_bot) · [کانال رسمی / Official channel](https://t.me/irsuppchannel) · [دانلود / Downloads](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.2)**
+**[خرید لایسنس / Buy a license](https://t.me/irsupplm_bot) · [کانال رسمی / Official channel](https://t.me/irsuppchannel) · [دانلود / Downloads](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.7.3)**
 
 </div>
