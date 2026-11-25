@@ -128,7 +128,7 @@ scp /root/PXCloud-invitation.json "root@${PXC_FOREIGN_IP}:/root/PXCloud-invitati
 | **2 — Import Config File** | فایل خصوصی نشان‌داده‌شده روی ایران را به خارج منتقل کنید؛ سپس مسیر آن را وارد کنید. دستور نمونه پایین همین بخش است. |
 | **3 — Manual Setup (step by step)** | روی ایران، داخل Current Config گزینهٔ **M** و سپس `SHOW` را بزنید. سمت خارج تک‌تک مقدارها را با همان ترتیب و عنوان می‌پرسد. برای لغو ورود دستی `BACK` بنویسید. |
 
-روش اول معمولاً ساده‌تر است. متن کپی‌شده و مقادیر دستی حاوی کلید خصوصی‌اند؛ آن‌ها را در کانال، گروه یا تیکت عمومی نگذارید. کد کپی‌شدنی صرفاً قالب انتقال است و رمزگذاری محسوب نمی‌شود. کلیدها و گواهی‌های روش دستی باید دقیقاً از خروجی ایران کپی شوند.
+روش اول معمولاً ساده‌تر است. در بستهٔ اصلاح‌شدهٔ 1.7.3، اگر عنوان زرد SERVER B CONNECTION CONFIG هم همراه بلوک کپی شود، برنامه آن را می‌پذیرد. متن کپی‌شده و مقادیر دستی حاوی کلید خصوصی‌اند؛ آن‌ها را در کانال، گروه یا تیکت عمومی نگذارید. کد کپی‌شدنی صرفاً قالب انتقال است و رمزگذاری محسوب نمی‌شود. کلیدها و گواهی‌های روش دستی باید دقیقاً از خروجی ایران کپی شوند.
 
 <details>
 <summary><strong>اگر روش دوم، یعنی فایل، را انتخاب کردید</strong></summary>
@@ -147,6 +147,8 @@ scp /etc/pxcloud/connections/next-peer.json "root@${PXC_FOREIGN_IP}:/root/Rakhsh
 در روش **Import Config File** سمت خارج، مسیر `/root/Rakhsh-peer.json` را وارد کنید. برای تونل‌های دیگر از مسیر نمایش‌داده‌شده در Current Config همان تونل استفاده کنید.
 
 </details>
+
+**ویرایش رخش بعد از نصب:** روی ایران یا خارج، وارد **Rakhsh → 8 — Edit connection settings** شوید. مقدار خالی یعنی حفظ مقدار فعلی. تغییرات را مرور و با `y` اعمال کنید. پورت، نوع انتقال و پروفایل باید در هر دو سمت یکسان باشند؛ سمت دیگر خودکار تغییر نمی‌کند. محدودیت سرعت مربوط به ترافیک خروجی همان سرور است. کلیدهای اتصال حفظ می‌شوند؛ برای این تغییرها نیازی به ورود دوبارهٔ فایل نیست.
 
 برای به‌روزرسانی تنظیمات اتصال موجود، در منوی همان تانل گزینهٔ **I — Connection Setup** همان سه روش را باز می‌کند. این کار فقط اتصال انتخاب‌شده را نصب یا به‌روزرسانی می‌کند؛ فایل تانل یا جفت‌سرور دیگر رد می‌شود.
 
@@ -268,6 +270,8 @@ pxcloud test --tunnel all --full --seconds 20 --streams 1
 نصب‌های قبلی بدون ساخت مجدد اتصال‌ها قابل استفاده‌اند. برای گرفتن فایل مستقل، روی ایران وارد **Current Config** همان تانل شوید. ابتدا هر دو سمت را به نسخهٔ جدید ارتقا دهید. فایل‌های قدیمی چندتانلی فقط برای سازگاری در مسیر قدیمی Import پذیرفته می‌شوند؛ آن‌ها را در Connection Setup وارد نکنید.
 
 ### آپدیت از داخل برنامه
+
+**اگر قبلاً 1.7.3 را نصب کرده‌اید:** برای دریافت اصلاح کپی کانفیگ و ویرایش تنظیمات، دستورهای مرحلهٔ ۲ را دوباره روی هر دو سرور اجرا کنید و منوی قدیمی را ببندید و باز کنید. گزینهٔ U بستهٔ هم‌شماره را دوباره نصب نمی‌کند. تنظیمات ذخیره‌شده حفظ می‌شوند.
 
 از نسخهٔ **1.7.2** به بعد، در منوی اصلی **U — Update to latest stable version** را بزنید. برنامه آخرین نسخهٔ پایدار گیت‌هاب را بررسی می‌کند؛ اگر جدیدتر باشد، دانلود و پس از تأیید امضا و صحت فایل‌ها نصب می‌شود. بعد، منوی نسخهٔ جدید خودکار باز می‌شود. اگر آپدیتی نباشد، چیزی تغییر نمی‌کند.
 
@@ -436,7 +440,7 @@ Use the invitation within **15 minutes**. If it expires, create and transfer a f
 | **2 — Import Config File** | Transfer the private peer file from Iran, then enter its local path on Foreign. See the example below. |
 | **3 — Manual Setup (step by step)** | On Iran, choose **M** in Current Config, then `SHOW`. Enter each displayed value at the matching Foreign prompt, in the same order. Type `BACK` to cancel manual entry. |
 
-Paste is usually the simplest option. The block and manual values contain private keys; keep them out of public messages. The copyable code is a transfer format, not encryption. Copy certificates and keys exactly from Iran.
+Paste is usually the simplest option. The corrected 1.7.3 package also accepts the yellow SERVER B CONNECTION CONFIG heading if it is included in the selection. The block and manual values contain private keys; keep them out of public messages. The copyable code is a transfer format, not encryption. Copy certificates and keys exactly from Iran.
 
 <details>
 <summary><strong>If you selected Import Config File</strong></summary>
@@ -451,6 +455,8 @@ scp /etc/pxcloud/connections/next-peer.json "root@${PXC_FOREIGN_IP}:/root/Rakhsh
 Enter `/root/Rakhsh-peer.json` in **Import Config File** on Foreign. For another tunnel, use the path in its own Current Config.
 
 </details>
+
+**Edit Rakhsh after installation:** on either endpoint, open **Rakhsh → 8 — Edit connection settings**. Press Enter to keep a value, review your changes, then confirm with `y`. Match profile, transport and port on both servers; the peer is not changed automatically. The rate limit controls this server’s outbound traffic. Keys are preserved, and no config-file import is required for these edits.
 
 To update an existing connection, open **I — Connection Setup** in that tunnel's menu. It offers the same three methods. Only the selected tunnel is installed or updated; wrong-tunnel and wrong-pair settings are rejected.
 
@@ -560,6 +566,8 @@ The bold yellow **Server IPv4** line above the menu identifies the current serve
 Existing connections remain usable without rebuilding them. Upgrade both endpoints before using the new peer files. On Iran, open the connection's **Current Config** to generate its own file. Legacy multi-tunnel bundles remain supported only by the legacy import path; do not use them with Connection Setup.
 
 ### Update from the menu
+
+**Already on 1.7.3?** Rerun step 2 on each endpoint to obtain the paste and settings fixes, then reopen old menus. U does not reinstall a package with the same version number. Saved settings are retained.
 
 Starting with **1.7.2**, select **U — Update to latest stable version** in the main menu. A newer stable GitHub release is downloaded, its signature and checksums are verified, and the package is installed. The updated menu opens automatically. If there is no newer version, nothing changes.
 
