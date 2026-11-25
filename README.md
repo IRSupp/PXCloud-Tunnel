@@ -16,7 +16,7 @@
 
 **[خرید و مدیریت لایسنس](https://t.me/irsupplm_bot) · [کانال رسمی](https://t.me/irsuppchannel)**
 
-**[Stable 1.6.0](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0)** · Ubuntu 24.04 · x86_64 · English menu
+**[Stable 1.6.1](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.1)** · Ubuntu 24.04 · x86_64 · English menu
 
 [فارسی](#فارسی)  /  [English](#english)
 
@@ -73,7 +73,7 @@
 
 از Assets همان نسخه، سه فایل زیر را دریافت و در یک پوشه روی **هر دو سرور** قرار دهید:
 
-- `PXCloud-Tunnel-1.6.0-linux-x86_64.tar.gz`
+- `PXCloud-Tunnel-1.6.1-linux-x86_64.tar.gz`
 - `PXCloud-Tunnel-Install.sh`
 - `SHA256SUMS`
 
@@ -112,6 +112,14 @@ sudo pxcloud --version
 
 **۶. بررسی اتصال**  
 گزینهٔ **7 — Quality dashboard** وضعیت و مسیر فعال را نشان می‌دهد. از گزینهٔ **8 — Failover settings** حالت `auto` را انتخاب کنید تا مسیرهای نصب‌شده، از جمله Rakhsh، در انتخاب خودکار شرکت کنند. تنظیمات کیفیت از جابه‌جایی بی‌دلیل و پی‌درپی جلوگیری می‌کنند؛ عبور پینگ از یک عدد ثابت به‌تنهایی همیشه موجب سوئیچ نمی‌شود.
+
+### حذف، نصب مجدد و بازیابی لایسنس
+
+از نسخهٔ **1.6.1**، حذف سرویس‌ها هویت لایسنس را نگه می‌دارد؛ برای نصب مجدد نیازی به ساخت هویت تازه نیست. اگر در نسخهٔ قبلی پس از حذف با خطای `Iran identity already bound` روبه‌رو شده‌اید، ابتدا نسخهٔ جدید را نصب کنید و `sudo pxcloud license recover` را بزنید؛ همین گزینه با نام **Recover saved identity** در منوی لایسنس هم موجود است. بازیابی به بکاپ معتبر محلی و تأیید آنلاین نیاز دارد و تانل‌های حذف‌شده را برنمی‌گرداند. اگر بکاپ موجود نیست، فایل هویت فعلی را پاک نکنید و با پشتیبانی تماس بگیرید.
+
+**Status** فقط وضعیت را می‌خواند. گزینهٔ صفر در صفحهٔ ابتدایی **Exit** است؛ اگر از منوی اصلی وارد لایسنس شده باشید، **Back** به همان منو برمی‌گردد.
+
+**لایسنس تست روی IP معاف:** معافیت ثبت‌شده توسط مدیر، روی همان لایسنس و همان جفت اعمال می‌شود؛ پایان تست تا وقتی IP معاف است موجب قطع نمی‌شود. انتخاب **Activate exempt Iran IP** نیز کلید یا جفت را عوض نمی‌کند. بررسی شش‌ساعته حفظ می‌شود؛ پس از حذف معافیت، سیاست اشتراک اصلی در بررسی بعدی اعمال می‌شود و مجوز قبلی فقط تا موعد امضاشده‌اش اعتبار دارد. معافیت، لغو یا تعلیق لایسنس را دور نمی‌زند.
 
 ### آزمون و مدیریت روزمره
 
@@ -174,8 +182,8 @@ sudo pxcloud test --tunnel all --full --seconds 20 --streams 1
 
 ### وضعیت انتشار
 
-**نسخهٔ Stable: [1.6.0](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0).**  
-بستهٔ کامپایل‌شده، نصب‌کننده و checksum آمادهٔ دریافت‌اند. نصب، مدیریت سرویس‌ها، لایسنس، بازیابی پورت و Failover روی دو سرور آزمایشی بررسی شده‌اند. فقط فایل‌هایی را دریافت کنید که همراه یادداشت انتشار و checksum در بخش Releases قرار گرفته‌اند.
+**نسخهٔ Stable: [1.6.1](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.1).**  
+بستهٔ کامپایل‌شده، نصب‌کننده و checksum آمادهٔ دریافت‌اند. اصلاحیهٔ 1.6.1 با ۹۵ تست مدیر، ۴۶ تست API و آزمون نصب، حذف، نصب مجدد و بازیابی واقعی هویت بررسی شده است. موتورهای تانل نسبت به 1.6.0 تغییر نکرده‌اند؛ نتایج تست مسیرها و Failover مربوط به آن نسخه‌اند. جزئیات محدودهٔ آزمون در یادداشت انتشار آمده است.
 
 **خرید و مدیریت اشتراک:** [@irsupplm_bot](https://t.me/irsupplm_bot)  
 **اخبار و نسخه‌های جدید:** [@irsuppchannel](https://t.me/irsuppchannel)
@@ -216,7 +224,7 @@ Multiple connection options, including **Rakhsh**, share the same management, mo
 
 **A is the Iran-side server; B is the foreign server, in any country.** Download these three matching release assets and place them together on **both servers**:
 
-- `PXCloud-Tunnel-1.6.0-linux-x86_64.tar.gz`
+- `PXCloud-Tunnel-1.6.1-linux-x86_64.tar.gz`
 - `PXCloud-Tunnel-Install.sh`
 - `SHA256SUMS`
 
@@ -238,6 +246,14 @@ Stop if checksum verification fails and download the matching assets again. Conn
 4. **Configure B.** On A, choose **9 — Export B bundle**, for example `/root/PXCloud-B.json`, and transfer it privately to B. On B, choose **5**, select **B** and import that file. The offered connections are installed automatically. **The connection bundle is separate from the license invitation and contains private keys. Never post either file publicly.**
 5. **Route client traffic.** For services with client subnets, use **6 — Client ranges & firewall** to enter your actual ranges on both servers. Enable routing on **B first, then A**. No client subnet is preselected; the client route must already exist on A. This workflow routes IPv4 traffic. For **V2Ray / Xray**, use **15 — V2Ray / Xray Traffic** and follow its service-specific instructions instead of relying only on client subnets.
 6. **Check operation.** **7 — Quality dashboard** displays path health and the active path. Set **8 — Failover settings** to `auto` for automatic selection across installed paths, including Rakhsh. Quality checks and hold times prevent repeated unnecessary switching; exceeding a single fixed ping value does not always trigger a change.
+
+### Uninstall, reinstall and license recovery
+
+From **1.6.1**, uninstall retains the licensing identity. Reinstall does not require a new identity. If an older uninstall caused `Iran identity already bound`, install the update and run `sudo pxcloud license recover`, also available as **Recover saved identity** in the licensing menu. Recovery requires an eligible signed local backup and fresh online approval. It does not restore removed tunnels. If the backup is missing, keep the current identity files and contact support.
+
+**Status** is read-only. The initial licensing screen uses **Exit**; licensing opened from the main menu uses **Back**, which returns to that menu.
+
+**Trials on exempt IPs:** an administrator-approved Iran IP exemption applies to the existing license and pair, so trial expiry does not interrupt an exempt pair. Manual **Activate exempt Iran IP** retains the key and peer. Six-hour checking remains in force. Removing the exemption restores the underlying subscription policy at the next check; an existing lease is usable only until its signed deadline. Revocation and suspension remain enforced.
 
 ### Test and manage
 
@@ -285,8 +301,8 @@ Check license validity and pairing, matching endpoint IPs, correct server clocks
 
 ### Release status
 
-**Stable release: [1.6.0](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.0).**  
-The compiled package, installer and checksums are available. Installation, service lifecycle, licensing, port recovery and failover have been exercised on a dedicated server pair. Use only assets accompanied by release notes and checksums in Releases.
+**Stable release: [1.6.1](https://github.com/IRSupp/PXCloud-Tunnel/releases/tag/v1.6.1).**  
+The compiled package, installer and checksums are available. Patch 1.6.1 passed 95 manager tests, 46 API tests, exact-package install/uninstall/reinstall checks and genuine identity recovery. Transport engines are unchanged from 1.6.0; path and failover measurements belong to that baseline. See the release notes for the validation scope.
 
 ---
 
